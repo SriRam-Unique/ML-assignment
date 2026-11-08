@@ -18,9 +18,10 @@ Source: [Mobile Price Classification on Kaggle](https://www.kaggle.com/datasets/
 - All required values in the labeled source are numeric and finite. Validation rejects missing values, non-numeric values, unsupported target labels, and unexpected columns; an optional `id` column is ignored.
 
 
-## c. GitHub Repository Link
+## c. GitHub Repository Link And Streamlit link
 
-https://github.com/SriRam-Unique/ML-assignment
+Git Hub : https://github.com/SriRam-Unique/ML-assignment
+Streamlit : https://ml-assignment-cqj48fxqq8qeaz7yoxbdbv.streamlit.app/
 
 ## d. Models used
 
@@ -55,17 +56,12 @@ metrics and a four-class confusion matrix remain available.
 
 | ML Model Name | Observation about model performance |
 | --- | --- |
-| Logistic Regression | Highest held-out accuracy and macro F1: 390/400 correct, with 10 adjacent-tier mistakes. AUC 0.9990 indicates very strong class ranking on this split. The result is consistent with useful approximately linear decision boundaries, but does not prove linearity. |
+| Logistic Regression | Highest held-out accuracy and macro F1: 390/400 correct, with 10 adjacent-tier mistakes. AUC 0.9990 indicates very strong class ranking on this split. The result is consistent with useful approximately linear decision boundaries.
 | Decision Tree | 340/400 correct and F1 0.8501. All 60 mistakes were between adjacent tiers. The selected depth-limited tree trails Logistic Regression and SVM; attributing this specifically to overfitting would require additional training/validation evidence. |
 | KNN | 247/400 correct, F1 0.6196 and MCC 0.4902, lowest among the five selected models. Of 153 errors, 3 span more than one tier. Equal weighting of all standardized features may weaken neighborhood quality; feature relevance or alternative distances would need training-only validation. |
-| Naive Bayes | 324/400 correct, F1 0.8105 and AUC 0.9506. All 76 mistakes are adjacent-tier errors. Its conditional-independence and Gaussian assumptions may be restrictive for correlated phone specifications; this is a hypothesis, not a measured causal explanation. |
+| Naive Bayes | 324/400 correct, F1 0.8105 and AUC 0.9506. All 76 mistakes are adjacent-tier errors. |
 | Support Vector Machine | Second-highest accuracy and F1: 376/400 correct, F1 0.9398 and AUC 0.9940. All 24 mistakes are adjacent-tier errors. The training-selected RBF model does not outperform Logistic Regression here; the small grid is not an exhaustive kernel or parameter search. |
-| Overall, Winner for your dataset? | Logistic Regression wins this fixed holdout comparison by macro F1, with the highest accuracy and MCC as well. This is not a guarantee on new real-world data. |
-
-These are descriptive holdout observations, not statistical significance claims.
-Do not repeatedly tune to this test split. Any future tuning should use cross-validation
-within the training partition and a fresh untouched final test set. There is no evidence
-here that this public dataset is representative of current commercial phones.
+| Overall| Logistic Regression wins this fixed holdout comparison by macro F1, with the highest accuracy and MCC as well. |
 
 
 ## Commands
